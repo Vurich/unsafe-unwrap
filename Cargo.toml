@@ -2,5 +2,7 @@
 name = "unsafe-unwrap"
 version = "0.1.0"
 authors = ["Vurich <jackefransham@gmail.com>"]
+description = " An unsafe version of `Option::unwrap` and `Result::unwrap` that causes UB instead of panicking"
+license = "Unlicense"
 
 [dependencies]

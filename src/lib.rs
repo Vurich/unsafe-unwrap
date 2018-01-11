@@ -1,5 +1,7 @@
 #![feature(unreachable)]
 
+#![no_std]
+
 pub trait UnsafeUnwrap {
     type Inner;
 
@@ -19,7 +21,7 @@ impl<T> UnsafeUnwrap for Option<T> {
         if let Some(inner) = self {
             inner
         } else {
-            ::std::mem::unreachable()
+            ::core::mem::unreachable()
         }
     }
 }
@@ -31,7 +33,7 @@ impl<T, E> UnsafeUnwrap for Result<T, E> {
         if let Ok(inner) = self {
             inner
         } else {
-            ::std::mem::unreachable()
+            ::core::mem::unreachable()
         }
     }
 }
@@ -43,7 +45,7 @@ impl<T, E> UnsafeUnwrapErr for Result<T, E> {
         if let Err(inner) = self {
             inner
         } else {
-            ::std::mem::unreachable()
+            ::core::mem::unreachable()
         }
     }
 }
